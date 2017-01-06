@@ -7,8 +7,10 @@ var shim = {
     }
 };
 
-var NewValidate = OldValidate.extend(function () {
-    this.registerLibrary('validate.js', shim);
+var NewValidate = OldValidate.extend({
+    init: function () {
+        this.registerLibrary('validate.js', shim);
+    }
 });
 
 module.exports = NewValidate;

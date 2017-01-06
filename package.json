@@ -37,7 +37,7 @@
     "url": "https://github.com/canjs/can-validate-validatejs/issues"
   },
   "dependencies": {
-    "can-validate": "file:../can-validate",
+    "can-validate": "^1.0.0-pre.1",
     "validate.js": "^0.11.1"
   },
   "devDependencies": {
