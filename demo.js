@@ -10,6 +10,6 @@ var constraints = {
   }
 };
 
-var err = validate.test(person.name, constraints.name)
+var err = validate.test(person.name, constraints.name);
 console.log('isValid', err);
 console.log('errors', validate.errors());
