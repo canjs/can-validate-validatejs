@@ -1,0 +1,68 @@
+{
+  "name": "can-validate-validatejs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "can-validate-validatejs.js",
+  "scripts": {
+    "preversion": "npm test && npm run build",
+    "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
+    "postversion": "git push --tags && git checkout master && git branch -D release && git push",
+    "testee": "testee test.html --browsers firefox",
+    "test": "npm run jshint && npm run testee",
+    "jshint": "jshint *.js --config",
+    "release:pre": "npm version prerelease && npm run build && npm publish",
+    "release:patch": "npm version patch && npm run build && npm publish",
+    "release:minor": "npm version minor && npm run build && npm publish",
+    "release:major": "npm version major && npm run build && npm publish",
+    "build": "node build.js",
+    "document": "bit-docs",
+    "develop": "http-server -c-1 -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canjs/can-validate-validatejs.git"
+  },
+  "keywords": [
+    "Validate",
+    "Validate.js",
+    "can-validate",
+    "plugin",
+    "canjs"
+  ],
+  "author": {
+    "name": "Bitovi"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/canjs/can-validate-validatejs/issues"
+  },
+  "dependencies": {
+    "can-validate": "file:../can-validate",
+    "validate.js": "^0.11.1"
+  },
+  "devDependencies": {
+    "bit-docs": "0.0.7",
+    "http-server": "^0.9.0",
+    "jshint": "^2.9.4",
+    "steal": "^1.0.8",
+    "steal-qunit": "^1.0.0",
+    "steal-tools": "^1.0.1",
+    "testee": "^0.3.0"
+},
+  "system": {
+    "ignoreBrowser": true,
+    "npmIgnore": [
+      "bit-docs",
+      "testee",
+      "steal-tools"
+    ],
+    "npmAlgorithm": "flat",
+    "npmDependencies": [
+      "steal-qunit"
+    ],
+    "paths": {
+      "validate.js": "./node_modules/validate.js/validate.js"
+    },
+    "transpiler": "babel"
+  }
+}
