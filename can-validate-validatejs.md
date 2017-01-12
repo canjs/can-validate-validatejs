@@ -2,7 +2,7 @@
 @parent can-ecosystem
 @package ./package.json
 
-@description Creates validator function that encapsulates provided constraints in order to validate values as needed.
+@description Create [can-validate/validator] functions using [validate.js](https://validatejs.org/).
 
 @signature makeValidator(constraints)
 
@@ -25,7 +25,7 @@ Returns a validator function that can be used to validate many values at once.
 
 ## Usage
 
-A validator can be created either for a single value or for many values.
+A validator can be created either for a single value or for many values.  More information on how to configure constraints can be found [here](https://validatejs.org/#validators).
 
 ### Single value validation
 
