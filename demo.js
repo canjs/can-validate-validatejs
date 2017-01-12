@@ -1,15 +1,22 @@
-var Validate = require('can-validate-validatejs');
-var validate = new Validate();
+var makeValidator = require("can-validate-validatejs");
 
-// Demo
-var person = {name: 'Juan', age: '35'};
-var constraints = {
-  name: {
-    presence: true,
-    length: 10
-  }
+var validateAge = makeValidator({
+    numericality: true
+});
+
+var validatePerson = makeValidator.many({
+    age: {
+        numericality: true
+    },
+    name: {
+        presence: true
+    }
+});
+
+var person = {
+    name: '',
+    age: 'hello'
 };
 
-var err = validate.test(person.name, constraints.name);
-console.log('isValid', err);
-console.log('errors', validate.errors());
+console.log(validateAge(person.age));
+console.log(validatePerson(person));

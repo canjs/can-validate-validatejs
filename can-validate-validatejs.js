@@ -1,16 +1,15 @@
-var OldValidate = require('can-validate');
 var validatejs = require('validate.js');
 
-var shim = {
-    test: function () {
-        return validatejs.single.apply(validatejs, arguments);
-    }
+var makeValidator = function (constraints) {
+    return function (value) {
+        return validatejs.single(value, constraints);
+    };
+}
+
+makeValidator.many = function (constraints) {
+    return function (values) {
+        return validatejs(values, constraints, {fullMessages: false});
+    };
 };
 
-var NewValidate = OldValidate.extend({
-    init: function () {
-        this.registerLibrary('validate.js', shim);
-    }
-});
-
-module.exports = NewValidate;
+module.exports = makeValidator;
