@@ -4,7 +4,7 @@ var makeValidator = function (constraints) {
     return function (value) {
         return validatejs.single(value, constraints);
     };
-}
+};
 
 makeValidator.many = function (constraints) {
     return function (values) {
