@@ -2,9 +2,9 @@
 @parent can-ecosystem
 @package ./package.json
 
-@description Create [can-validate/validator] functions using [validate.js](https://validatejs.org/).
+@description Create [can-validate/types/validator] functions using [validate.js](https://validatejs.org/).
 
-@signature makeValidator(constraints)
+@signature `makeValidator(constraints)`
 
 Returns a validator function that can be used to validate a single value.
 
@@ -12,7 +12,7 @@ Returns a validator function that can be used to validate a single value.
 
 @return {Validator} A validator type function that takes a value and validates it against the provided constraints.
 
-@signature makeValidator.many(constraints)
+@signature `makeValidator.many(constraints)`
 
 Returns a validator function that can be used to validate many values at once.
 
@@ -32,6 +32,7 @@ A validator can be created either for a single value or for many values.  More i
 Using the Validate.js library validators and configuration, call `makeValidator` and pass the desired constraints. The resulting function can then be used to validate specific values.
 
 ```javascript
+var makeValidator = require('can-validate-validatejs');
 var validateAge = makeValidator({
     numericality: true
 });
@@ -48,6 +49,7 @@ validateAge(anotherAge); //> undefined
 Similar to using `makeValidator`, except that `makeValidator.many` produces a validator that expects an object of values. The validator will run constraints on respective values based on the keys provided.
 
 ```javascript
+var makeValidator = require('can-validate-validatejs');
 var validatePerson = makeValidator.many({
     age: {
         numericality: true

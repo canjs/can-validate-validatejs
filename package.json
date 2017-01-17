@@ -1,7 +1,7 @@
 {
   "name": "can-validate-validatejs",
   "version": "0.0.2",
-  "description": "",
+  "description": "Create validator functions that use ValidateJS to validate values.",
   "main": "can-validate-validatejs.js",
   "scripts": {
     "preversion": "npm test && npm run build",
@@ -15,8 +15,7 @@
     "release:minor": "npm version minor && npm run build && npm publish",
     "release:major": "npm version major && npm run build && npm publish",
     "build": "node build.js",
-    "document": "bit-docs",
-    "develop": "http-server -c-1 -o"
+    "develop": "http-server -c-1"
   },
   "repository": {
     "type": "git",
@@ -37,11 +36,11 @@
     "url": "https://github.com/canjs/can-validate-validatejs/issues"
   },
   "dependencies": {
+    "can-util": "3.2.2",
     "validate.js": "0.11.1"
   },
   "devDependencies": {
     "bit-docs": "^0.0.7",
-    "can-util": "^3.2.2",
     "http-server": "^0.9.0",
     "jshint": "^2.9.4",
     "steal": "^1.0.8",

@@ -1,6 +1,7 @@
 var makeValidator = require('can-validate-validatejs');
 var QUnit = require('steal-qunit');
 var isEmptyObject = require('can-util/js/is-empty-object/is-empty-object');
+var isArray = require('can-util/js/is-array/is-array');
 
 var constraints = {
     age: {
@@ -25,33 +26,30 @@ var validPerson = {
     age: 35
 };
 
-var validateAge;
-var validatePerson;
-
 QUnit.module('can-validate-validatejs');
 
 QUnit.test('makeValidator sets errors',function(){
-    validateAge = makeValidator(constraints.age);
+    var validateAge = makeValidator(constraints.age);
     errors = validateAge(invalidPerson.age);
 	QUnit.equal(errors.length, 1);
     QUnit.equal(errors[0], constraints.age.numericality.message);
 });
 
 QUnit.test('makeValidator validates',function(){
-    validateAge = makeValidator(constraints.age);
+    var validateAge = makeValidator(constraints.age);
     errors = validateAge(validPerson.age);
-	QUnit.equal(errors, undefined);
+	QUnit.ok(isArray(errors));
 });
 
 QUnit.test('makeValidator.many sets errors',function(){
-    validatePerson = makeValidator.many(constraints);
+    var validatePerson = makeValidator.many(constraints);
     errors = validatePerson(invalidPerson);
 	QUnit.equal(isEmptyObject(errors), false);
-    QUnit.equal(errors.name[0], constraints.name.presence.message);
+    QUnit.equal(errors[1].message, constraints.name.presence.message);
 });
 
 QUnit.test('makeValidator.many validates',function(){
-    validatePerson = makeValidator.many(constraints);
+    var validatePerson = makeValidator.many(constraints);
     errors = validatePerson(validPerson);
-	QUnit.equal(errors, undefined);
+	QUnit.equal(isArray(errors), true);
 });
