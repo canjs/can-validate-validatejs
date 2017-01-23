@@ -1,23 +1,24 @@
 @module {function} can-validate-validatejs
 @parent can-ecosystem
-@group can-validate-validatejs/methods Methods
+@group can-validate-validatejs.methods 1 Methods
 @package ../package.json
 
-@description Create [can-validate/types/validator] functions using [validate.js](https://validatejs.org/).
+@description Create [can-validate.validator] functions using [validate.js](https://validatejs.org/).
 
 @signature `makeValidator(constraints)`
 
 Returns a validator function that can be used to validate a single value.
 
+  ```js
+  var validateAge = makeValidator({
+      numericality: true
+  });
+  ```
+
+
   @param {Object} constraints An object of definitions used by the Validate.js library to run validations on a value.
 
   @return {Validator} A validator type function that takes a value and validates it against the provided constraints.
-
-    ```javascript
-    var validateAge = makeValidator({
-        numericality: true
-    });
-    ```
 
 @body
 
@@ -27,9 +28,9 @@ A validator can be created either for a single value or for many values.  More i
 
 ### Single value validation
 
-Using the Validate.js library validators and configuration, call `makeValidator` and pass the desired constraints. The resulting function can then be used to validate specific values.
+Using the [Validate.js](https://validatejs.org/) library validators and configuration, call `makeValidator` and pass the desired constraints. The resulting function can then be used to validate specific values.
 
-```javascript
+```js
 var makeValidator = require('can-validate-validatejs');
 var validateAge = makeValidator({
     numericality: true
@@ -44,7 +45,7 @@ validateAge(anotherAge); //> undefined
 
 ### Multiple value validation
 
-Using the [can-validate-validatejs/methods/many] works similar to `makeValidator`, except that `makeValidator.many` produces a validator that expects an object of values. The validator will run constraints on respective values based on the keys provided.
+Using the [can-validate-validatejs.many] works similar to `makeValidator`, except that `makeValidator.many` produces a validator that expects an object of values. The validator will run constraints on respective values based on the keys provided.
 
 ```javascript
 var makeValidator = require('can-validate-validatejs');
