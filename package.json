@@ -1,6 +1,6 @@
 {
   "name": "can-validate-validatejs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Create validator functions that use ValidateJS to validate values.",
   "main": "can-validate-validatejs.js",
   "scripts": {
