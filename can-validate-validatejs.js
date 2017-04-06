@@ -23,6 +23,6 @@ makeValidator.many = function (constraints) {
 	};
 };
 
-exports.validatejs = validatejs;
+makeValidator.validatejs = validatejs;
 
 module.exports = makeValidator;
