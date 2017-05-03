@@ -1,5 +1,7 @@
 # `can-validate-validatejs`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can-validate-validatejs.svg)](https://greenkeeper.io/)
+
 Create validator functions using [validate.js](https://validatejs.org/).
 
 Usage and API info can be found on [CanJS.com](http://canjs.com/doc/can-validate-validatejs.html).
