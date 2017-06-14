@@ -6,11 +6,11 @@
   "scripts": {
     "preversion": "npm test && npm run build",
     "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
-    "postversion": "git push --tags && git checkout master && git branch -D release && git push",
+    "postversion": "git push --tags && git checkout can-reflect && git branch -D release && git push",
     "testee": "testee test.html --browsers firefox",
     "test": "npm run jshint && npm run testee",
     "jshint": "jshint .",
-    "release:pre": "npm version prerelease && npm run build && npm publish",
+    "release:pre": "npm version prerelease && npm run build && npm publish --tag=pre",
     "release:patch": "npm version patch && npm run build && npm publish",
     "release:minor": "npm version minor && npm run build && npm publish",
     "release:major": "npm version major && npm run build && npm publish",
@@ -36,7 +36,7 @@
     "url": "https://github.com/canjs/can-validate-validatejs/issues"
   },
   "dependencies": {
-    "can-util": "^3.2.2",
+    "can-util": "^3.9.0-pre.4",
     "validate.js": "^0.11.1"
   },
   "devDependencies": {
