@@ -1,5 +1,6 @@
 @module {function} can-validate-validatejs
-@parent can-ecosystem
+@parent can-data-validation
+@collection can-ecosystem
 @group can-validate-validatejs.methods 1 Methods
 @package ../package.json
 
