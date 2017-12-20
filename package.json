@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "can-util": "^3.9.0",
-    "validate.js": "^0.11.1"
+    "validate.js": "^0.12.0"
   },
   "devDependencies": {
     "bit-docs": "^0.0.8",
