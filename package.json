@@ -9,7 +9,7 @@
     "postversion": "git push --tags && git checkout master && git branch -D release && git push",
     "testee": "testee test.html --browsers firefox",
     "test": "npm run detect-cycle && npm run jshint && npm run testee",
-    "jshint": "jshint .",
+    "jshint": "jshint . --config",
     "release:pre": "npm version prerelease && npm run build && npm publish --tag=pre",
     "release:patch": "npm version patch && npm run build && npm publish",
     "release:minor": "npm version minor && npm run build && npm publish",
@@ -37,7 +37,7 @@
     "url": "https://github.com/canjs/can-validate-validatejs/issues"
   },
   "dependencies": {
-    "can-util": "^3.9.0",
+    "can-reflect": "^1.11.1",
     "validate.js": "^0.11.1"
   },
   "devDependencies": {
@@ -50,20 +50,18 @@
     "steal-tools": "^1.0.1",
     "testee": "^0.7.0"
   },
-  "system": {
+  "steal": {
     "ignoreBrowser": true,
     "npmIgnore": [
       "bit-docs",
       "testee",
       "steal-tools"
     ],
-    "npmAlgorithm": "flat",
     "npmDependencies": [
       "steal-qunit"
     ],
     "paths": {
       "validate.js": "./node_modules/validate.js/validate.js"
-    },
-    "transpiler": "babel"
+    }
   }
 }

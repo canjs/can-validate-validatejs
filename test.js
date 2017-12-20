@@ -1,7 +1,5 @@
-var makeValidator = require('can-validate-validatejs');
 var QUnit = require('steal-qunit');
-var isEmptyObject = require('can-util/js/is-empty-object/is-empty-object');
-var isArray = require('can-util/js/is-array/is-array');
+var makeValidator = require('can-validate-validatejs');
 
 var constraints = {
 	age: {
