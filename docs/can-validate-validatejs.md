@@ -10,10 +10,10 @@
 
 Returns a validator function that can be used to validate a single value.
 
-  ```javascript
-  const validateAge = makeValidator({
-      numericality: true
-  });
+  ```js
+const validateAge = makeValidator({
+	numericality: true
+});
   ```
 
 
@@ -31,10 +31,10 @@ A validator can be created either for a single value or for many values.  More i
 
 Using the [Validate.js](https://validatejs.org/) library validators and configuration, call `makeValidator` and pass the desired constraints. The resulting function can then be used to validate specific values.
 
-```javascript
+```js
 import makeValidator from 'can-validate-validatejs';
 const validateAge = makeValidator({
-    numericality: true
+	numericality: true
 });
 
 const age = 'hello';
@@ -48,26 +48,26 @@ validateAge(anotherAge); //> undefined
 
 Using the [can-validate-validatejs.many] works similar to `makeValidator`, except that `makeValidator.many` produces a validator that expects an object of values. The validator will run constraints on respective values based on the keys provided.
 
-```javascript
+```js
 import makeValidator from 'can-validate-validatejs';
 const validatePerson = makeValidator.many({
-    age: {
-        numericality: true
-    },
-    name: {
-        presence: true
-    }
+	age: {
+		numericality: true
+	},
+	name: {
+		presence: true
+	}
 });
 
 const invalidPerson = {
-    name: '',
-    age: 'hello'
+	name: '',
+	age: 'hello'
 };
 validatePerson(invalidPerson); //> {name: ['is required'], age: ['is not a number']}
 
 const validPerson = {
-    name: 'Juan',
-    age: 35
+	name: 'Juan',
+	age: 35
 };
 validatePerson(validPerson); //> undefined
 ```
