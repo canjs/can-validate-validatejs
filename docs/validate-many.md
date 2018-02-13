@@ -5,8 +5,8 @@
 
   Returns a validator function that can be used to validate many values at once.
 
-  ```js
-  var validatePerson = makeValidator.many({
+  ```javascript
+  const validatePerson = makeValidator.many({
       age: {
           numericality: true
       },
@@ -25,9 +25,9 @@
 
 ## Example
 
-  ```js
-  var makeValidator = require('can-validate-validatejs');
-  var validatePerson = makeValidator.many({
+  ```javascript
+  import makeValidator from 'can-validate-validatejs';
+  const validatePerson = makeValidator.many({
       age: {
           numericality: true
       },
@@ -36,13 +36,13 @@
       }
   });
 
-  var invalidPerson = {
+  const invalidPerson = {
       name: '',
       age: 'hello'
   };
   validatePerson(invalidPerson); //> {name: ['is required'], age: ['is not a number']}
 
-  var validPerson = {
+  const validPerson = {
       name: 'Juan',
       age: 35
   };
