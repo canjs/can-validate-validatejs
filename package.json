@@ -45,7 +45,7 @@
     "detect-cyclic-packages": "^1.1.0",
     "http-server": "^0.11.0",
     "jshint": "^2.9.4",
-    "steal": "^1.0.8",
+    "steal": "^2.1.1",
     "steal-qunit": "^1.0.0",
     "steal-tools": "^1.0.1",
     "testee": "^0.8.0"
