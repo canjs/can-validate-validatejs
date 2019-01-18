@@ -41,7 +41,7 @@
     "validate.js": "^0.11.1"
   },
   "devDependencies": {
-    "bit-docs": "^0.0.8",
+    "bit-docs": "^0.1.0",
     "detect-cyclic-packages": "^1.1.0",
     "http-server": "^0.11.0",
     "jshint": "^2.9.4",
