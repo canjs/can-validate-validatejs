@@ -5,8 +5,6 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/canjs/can-validate-validatejs/blob/master/LICENSE.md)
 [![npm version](https://badge.fury.io/js/can-validate-validatejs.svg)](https://www.npmjs.com/package/can-validate-validatejs)
 [![Travis build status](https://travis-ci.org/canjs/can-validate-validatejs.svg?branch=master)](https://travis-ci.org/canjs/can-validate-validatejs)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/canjs/can-validate-validatejs?branch=master&svg=true)](https://ci.appveyor.com/project/matthewp/can-validate-validatejs)
-[![Coverage status](https://coveralls.io/repos/github/canjs/can-validate-validatejs/badge.svg?branch=master)](https://coveralls.io/github/canjs/can-validate-validatejs?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can-validate-validatejs.svg)](https://greenkeeper.io/)
 
 Create validator functions using [validate.js](https://validatejs.org/).
