@@ -30,13 +30,13 @@ QUnit.test('makeValidator sets errors',function(){
 	var validateAge = makeValidator(constraints.age);
 	var errors = validateAge(invalidPerson.age);
 	var expectedErrors = [constraints.age.numericality.message];
-	QUnit.deepEqual(errors, expectedErrors, 'returns expected errors object');
+	assert.deepEqual(errors, expectedErrors, 'returns expected errors object');
 });
 
 QUnit.test('makeValidator validates',function(){
 	var validateAge = makeValidator(constraints.age);
 	var errors = validateAge(validPerson.age);
-	QUnit.notOk(errors, 'value is valid, so no errors return');
+	assert.notOk(errors, 'value is valid, so no errors return');
 });
 
 QUnit.test('makeValidator.many sets errors',function(){
@@ -51,11 +51,11 @@ QUnit.test('makeValidator.many sets errors',function(){
 			related: ['name']
 		}
 	];
-	QUnit.deepEqual(errors, expectedErrors, 'Many errors are set');
+	assert.deepEqual(errors, expectedErrors, 'Many errors are set');
 });
 
 QUnit.test('makeValidator.many validates',function(){
 	var validatePerson = makeValidator.many(constraints);
 	var errors = validatePerson(validPerson);
-	QUnit.notOk(errors, 'values are valid, so no errors return');
+	assert.notOk(errors, 'values are valid, so no errors return');
 });
